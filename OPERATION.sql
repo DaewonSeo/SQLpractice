@@ -1,0 +1,16 @@
+-- 최댓값 구하기
+-- 아래와 같이 ORDER BY와 LIMIT으로도 풀이 가능
+-- SELECT DATETIME FROM ANIMAL_INS ORDER BY DATETIME DESC LIMIT 1;
+SELECT MAX(DATETIME) AS '시간' FROM ANIMAL_INS;
+
+-- 최솟값 구하기
+-- SELECT DATETIME FROM ANIMAL_INS ORDER BY DATETIME ASC LIMIT 1;
+SELECT MIN(DATETIME) AS '시간' FROM ANIMAL_INS;
+
+-- 동물 수 구하기
+SELECT COUNT(*) AS 'count' FROM ANIMAL_INS;
+
+-- 중복 제거하기
+-- DISTINCE는 SELECT문 안에 오는 전체 컬럼을 대상으로 하기 때문에 데이터의 상관관계를 고려해야함.
+-- 행을 집계할 경우 자동으로 NULL 값은 제외하고 계산, 하지만 SELECT *의 경우 NULL값 포함하여 계산   
+SELECT COUNT(DISTINCT NAME) FROM ANIMAL_INS;
